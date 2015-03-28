@@ -39,6 +39,7 @@ CLASS ltc_coin_changer IMPLEMENTATION.
     me->assert_change_for_value( act = 5 exp = VALUE #( ( 5 ) ) ).
     me->assert_change_for_value( act = 6 exp = VALUE #( ( 5 ) ( 1 ) ) ).
     me->assert_change_for_value( act = 10 exp = VALUE #( ( 10 ) ) ).
+    me->assert_change_for_value( act = 24 exp = VALUE #( ( 10 ) ( 10 ) ( 1 ) ( 1 ) ( 1 ) ( 1 ) ) ).
   ENDMETHOD.
  
 ENDCLASS.
