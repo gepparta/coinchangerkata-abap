@@ -44,8 +44,14 @@ ENDCLASS.
 CLASS lcl_coin_changer IMPLEMENTATION.
  
   METHOD change_for.
+    DATA(amount)  = iv_amount.
  
-    DO iv_amount TIMES.
+    IF amount >= 5.
+      APPEND 5 TO rt_coins.
+      amount = amount - 5.
+    ENDIF.
+ 
+    DO amount TIMES.
       APPEND 1 TO rt_coins.
     ENDDO.
  
