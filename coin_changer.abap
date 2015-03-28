@@ -42,7 +42,13 @@ ENDCLASS.
 CLASS lcl_coin_changer IMPLEMENTATION.
  
   METHOD change_for.
-    "Change code goes here
+ 
+    IF iv_amount IS INITIAL.
+      RETURN.
+    ENDIF.
+ 
+    APPEND 1 TO rt_coins.
+ 
   ENDMETHOD.
  
 ENDCLASS.
