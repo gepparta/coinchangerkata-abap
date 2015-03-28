@@ -33,8 +33,7 @@ CLASS ltc_coin_changer IMPLEMENTATION.
   ENDMETHOD.
  
   METHOD change_scenarios.
-    "Change scenarios goes here
-    "me->assert_change_for_value( act = {value} exp = VALUE #( {coin combination result} ) ).
+    me->assert_change_for_value( act = 0 exp = VALUE #( ) ).
   ENDMETHOD.
  
 ENDCLASS.
