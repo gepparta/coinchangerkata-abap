@@ -35,6 +35,7 @@ CLASS ltc_coin_changer IMPLEMENTATION.
   METHOD change_scenarios.
     me->assert_change_for_value( act = 0 exp = VALUE #( ) ).
     me->assert_change_for_value( act = 1 exp = VALUE #( ( 1 ) ) ).
+    me->assert_change_for_value( act = 2 exp = VALUE #( ( 1 ) ( 1 ) ) ).
   ENDMETHOD.
  
 ENDCLASS.
