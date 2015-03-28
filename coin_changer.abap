@@ -44,11 +44,9 @@ CLASS lcl_coin_changer IMPLEMENTATION.
  
   METHOD change_for.
  
-    IF iv_amount IS INITIAL.
-      RETURN.
-    ENDIF.
- 
-    APPEND 1 TO rt_coins.
+    DO iv_amount TIMES.
+      APPEND 1 TO rt_coins.
+    ENDDO.
  
   ENDMETHOD.
  
