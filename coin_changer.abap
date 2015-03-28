@@ -49,7 +49,7 @@ CLASS lcl_coin_changer IMPLEMENTATION.
  
   METHOD change_for.
     DATA(amount)  = iv_amount.
-    DATA(coins) = VALUE tty_i( ( 10 ) ( 5 ) ( 1 ) ).
+    DATA(coins) = VALUE tty_i( ( 25 ) ( 10 ) ( 5 ) ( 1 ) ).
  
     LOOP AT coins INTO DATA(coin).
       WHILE amount >= coin.
