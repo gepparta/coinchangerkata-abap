@@ -48,6 +48,11 @@ CLASS lcl_coin_changer IMPLEMENTATION.
   METHOD change_for.
     DATA(amount)  = iv_amount.
  
+    IF amount >= 10.
+      APPEND 10 TO rt_coins.
+      amount = amount - 10.
+    ENDIF.
+ 
     IF amount >= 5.
       APPEND 5 TO rt_coins.
       amount = amount - 5.
