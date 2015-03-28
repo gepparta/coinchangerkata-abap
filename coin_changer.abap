@@ -41,6 +41,11 @@ CLASS ltc_coin_changer IMPLEMENTATION.
     me->assert_change_for_value( act = 10 exp = VALUE #( ( 10 ) ) ).
     me->assert_change_for_value( act = 24 exp = VALUE #( ( 10 ) ( 10 ) ( 1 ) ( 1 ) ( 1 ) ( 1 ) ) ).
     me->assert_change_for_value( act = 25 exp = VALUE #( ( 25 ) ) ).
+    me->assert_change_for_value( act = 49 exp = VALUE #( ( 25 ) ( 10 ) ( 10 ) ( 1 ) ( 1 ) ( 1 ) ( 1 ) ) ).
+    me->assert_change_for_value( act = 50 exp = VALUE #( ( 50 ) ) ).
+    me->assert_change_for_value( act = 99 exp = VALUE #( ( 50 ) ( 25 ) ( 10 ) ( 10 ) ( 1 ) ( 1 ) ( 1 ) ( 1 ) ) ).
+    me->assert_change_for_value( act = 100 exp = VALUE #( ( 100 ) ) ).
+    me->assert_change_for_value( act = 199 exp = VALUE #( ( 100 ) ( 50 ) ( 25 ) ( 10 ) ( 10 ) ( 1 ) ( 1 ) ( 1 ) ( 1 ) ) ).
   ENDMETHOD.
  
 ENDCLASS.
@@ -49,7 +54,7 @@ CLASS lcl_coin_changer IMPLEMENTATION.
  
   METHOD change_for.
     DATA(amount)  = iv_amount.
-    DATA(coins) = VALUE tty_i( ( 25 ) ( 10 ) ( 5 ) ( 1 ) ).
+    DATA(coins) = VALUE tty_i( ( 100 ) ( 50 ) ( 25 ) ( 10 ) ( 5 ) ( 1 ) ).
  
     LOOP AT coins INTO DATA(coin).
       WHILE amount >= coin.
